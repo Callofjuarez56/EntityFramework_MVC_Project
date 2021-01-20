@@ -1,0 +1,44 @@
+﻿@model WebApplication6.Storage.Entity.Group
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateGroup</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Update", "Group", FormMethod.Post)) // все элементы будт переданы скрытым образом в результирующий набор нашей формы
+        {
+            <input id="id" name="id" type="hidden" value="@Model.id" />
+
+            <label>Номер группы: </label>
+            <input id="Name" type="text" name="Name" value="@Model.Name" /><br /><br />
+
+            <label>Направление: </label>
+            <input id="DepartmentNumber" type="text" name="DepartmentNumber" value="@Model.DepartmentNumber" /><br /><br />
+
+            <input type="submit" value="Редактировать группу" />
+
+
+        }
+
+        <p></p>
+        @using (Html.BeginForm("DeleteGroup", "Group", FormMethod.Get))
+        {
+            <input id="id" name="id" type="hidden" value="@Model.id" />
+            <input type="submit" value="удалить группу" />
+        }
+
+
+        <div>
+            @Html.ActionLink("Вернуться на страницу вывода групп", "ShowGroups", "Group")
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿@model WebApplication6.Storage.Entity.cal_c
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddStudent</title>
+</head>
+<body>
+    @using (Html.BeginForm("Add", "Student", FormMethod.Post))
+    {
+        <label>Имя: </label>
+        <input id="FirstNumber" type="text" name="FirstNumber" for="FirstNumber" /><br /><br />
+
+        <label>Фамилия: </label>
+        <input id="SecondNumber" type="text" name="SecondNumber" for="SecondNumber" /><br /><br />
+
+        <label>Староста: </label>
+        <input id="GroupLeader" type="text" name="GroupLeader" for="GroupLeader" /><br /><br />
+
+        <label>ID Группы: </label>
+        <input id="GroupID" type="text" name="GroupID" for="GroupID" /><br /><br />
+
+        <label>ID Первого модуля: </label>
+        <input id="FirstModID" type="text" name="FirstModID" for="FirstModID" /><br /><br />
+
+        <label>ID Второго модуля: </label>
+        <input id="SecondModID" type="text" name="SecondModID" for="SecondModID" /><br /><br />
+
+        <label>ID Предмета: </label>
+        <input id="SubjID" type="text" name="SubjID" for="SubjID" /><br /><br />
+
+
+        <input type="submit" value="Добавить нового студента" />
+    }
+
+    <div>
+        @Html.ActionLink("Вернуться на страницу вывода студентов", "ShowStudent", "Student")
+    </div>
+</body>
+</html>

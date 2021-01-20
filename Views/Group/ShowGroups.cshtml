@@ -1,0 +1,44 @@
+﻿@model IEnumerable<WebApplication6.Storage.Entity.Group>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowGroups</title>
+</head>
+<body>
+    <div>
+        <h1>Группы</h1>
+        @foreach (var item in Model)
+        {
+            <label>ID: </label>@item.id<br />
+            <label>Номер группы: </label>@item.Name<br />
+            <label>Направление: </label>@item.DepartmentNumber<br />
+            <a href="/Group/UpdateGroup/@item.id">Редактировать группу</a><br /><br />// контроллер -> метод -> передаем Idшник
+        }
+
+
+        @using (Html.BeginForm("AddGroup", "Group"))
+        {
+            <div>
+                <input type="submit" value="Добавить новую группу" />
+            </div>
+        }
+
+        <p></p>
+
+        @using (Html.BeginForm("HomePage", "Group"))
+        {
+            <div>
+                <input type="submit" value="Вернуться" />
+            </div>
+        }
+
+
+    </div>
+</body>
+</html>

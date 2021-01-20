@@ -1,0 +1,43 @@
+﻿@model IEnumerable<WebApplication6.Storage.Entity.SecondM>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowSecondMod</title>
+</head>
+<body>
+    <div>
+        <h1>Второй модуль модуль</h1>
+        @foreach (var item in Model)
+        {
+            <label>ID: </label>@item.id<br />
+            <label>Оценка: </label>@item.SecondMd<br />
+            <a href="/SecondMod/UpdateSecondMod/@item.id">Редактировать модуль</a><br /><br />// контроллер -> метод -> передаем Idшник
+        }
+
+
+        @using (Html.BeginForm("AddSecondMod", "SecondMod"))
+        {
+            <div>
+                <input type="submit" value="Добавить новый модуль" />
+            </div>
+        }
+
+        <p></p>
+
+        @using (Html.BeginForm("HomePage", "Group"))
+        {
+            <div>
+                <input type="submit" value="Вернуться" />
+            </div>
+        }
+
+
+    </div>
+</body>
+</html>

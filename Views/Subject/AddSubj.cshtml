@@ -1,0 +1,26 @@
+﻿@model WebApplication6.Managers.Subjects.CreateOrUpdateSubjRequest
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddSubj</title>
+</head>
+<body>
+    @using (Html.BeginForm("Add", "Subject", FormMethod.Post))
+    {
+        <label>Название предмета: </label>
+        <input id="Name_of_Sub" type="text" name="Name_of_Sub" /><br /><br />
+
+        <input type="submit" value="Добавить новый предмет" />
+    }
+
+    <div>
+        @Html.ActionLink("Вернуться на страницу вывода предметов", "ShowSubj", "Subject")
+    </div>
+</body>
+</html>

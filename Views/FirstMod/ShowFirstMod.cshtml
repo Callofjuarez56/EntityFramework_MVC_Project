@@ -1,0 +1,43 @@
+﻿@model IEnumerable<WebApplication6.Storage.Entity.FirstM>
+
+    @{
+        Layout = null;
+    }
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>ShowFirstMod</title>
+    </head>
+    <body>
+        <div>
+            <h1>Первый модуль</h1>
+            @foreach (var item in Model)
+            {
+                <label>ID: </label>@item.id<br />
+                <label>Оценка: </label>@item.FirstMd<br />
+                <a href="/FirstMod/UpdateFirstMod/@item.id">Редактировать модуль</a><br /><br />// контроллер -> метод -> передаем Idшник
+            }
+
+
+            @using (Html.BeginForm("AddFirstMod", "FirstMod"))
+            {
+                <div>
+                    <input type="submit" value="Добавить новый модуль" />
+                </div>
+            }
+
+            <p></p>
+
+            @using (Html.BeginForm("HomePage", "Group"))
+            {
+                <div>
+                    <input type="submit" value="Вернуться" />
+                </div>
+            }
+
+
+        </div>
+    </body>
+</html>

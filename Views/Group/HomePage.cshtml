@@ -1,0 +1,56 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Данные</title>
+</head>
+<body>
+    <div>
+        <h1>Деканат</h1>
+
+        @using (Html.BeginForm("ShowGroups", "Group", FormMethod.Get))
+        {
+            <div>
+                <input type="submit" value="Группы" />
+            </div>
+        }
+
+        <p></p>
+        @using (Html.BeginForm("ShowStudent", "Student", FormMethod.Get))
+        {
+            <div>
+                <input type="submit" value="Студенты" />
+            </div>
+        }
+
+        <p></p>
+        @using (Html.BeginForm("ShowSubj", "Subject", FormMethod.Get))
+        {
+            <div>
+                <input type="submit" value="Предметы" />
+            </div>
+        }
+
+        <p></p>
+        @using (Html.BeginForm("ShowFirstMod", "FirstMod", FormMethod.Get))
+        {
+            <div>
+                <input type="submit" value="Первый модуль" />
+            </div>
+        }
+
+        <p></p>
+        @using (Html.BeginForm("ShowSecondMod", "SecondMod", FormMethod.Get))
+        {
+            <div>
+                <input type="submit" value="Второй модуль" />
+            </div>
+        }
+
+    </div>
+</body>
+</html>

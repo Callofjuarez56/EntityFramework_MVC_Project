@@ -1,0 +1,43 @@
+﻿@model IEnumerable<WebApplication6.Storage.Entity.Subject>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowGroups</title>
+</head>
+<body>
+    <div>
+        <h1>Предметы</h1>
+        @foreach (var item in Model)
+        {
+            <label>ID: </label>@item.id<br />
+            <label>Имя: </label>@item.Name_of_Sub<br />
+            <a href="/Subject/UpdateSubj/@item.id">Редактировать предмет</a><br /><br />// контроллер -> метод -> передаем Idшник
+        }
+
+
+        @using (Html.BeginForm("AddSubj", "Subject"))
+        {
+            <div>
+                <input type="submit" value="Добавить новый предмет" />
+            </div>
+        }
+
+        <p></p>
+
+        @using (Html.BeginForm("HomePage", "Group"))
+        {
+            <div>
+                <input type="submit" value="Вернуться" />
+            </div>
+        }
+
+
+    </div>
+</body>
+</html>

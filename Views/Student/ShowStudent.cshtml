@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WebApplication6.Storage.Entity.cal_c>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowGroups</title>
+</head>
+<body>
+    <div>
+        <h1>Студенты</h1>
+        @foreach (var item in Model)
+        {
+            <label>ID: </label>@item.id<br />
+            <label>Имя: </label>@item.FirstNumber<br />
+            <label>Фамилия: </label>@item.SecondNumber<br />
+            <label>Группа: </label>@item.GroupID<br />
+            <label>Предмет: </label>@item.SubjID<br />
+            <label>Первый модуль: </label>@item.FirstModID<br />
+            <label>Второй модуль: </label>@item.SecondModID<br />
+            <label>Староста: </label>@item.GroupLeader<br />
+            <a href="/Student/UpdateStudents/@item.id">Редактировать студента</a><br /><br />// контроллер -> метод -> передаем Idшник
+        }
+
+
+        @using (Html.BeginForm("AddNumbers", "Student"))
+        {
+            <div>
+                <input type="submit" value="Добавить нового студента" />
+            </div>
+        }
+
+        <p></p>
+
+        @using (Html.BeginForm("HomePage", "Group"))
+        {
+            <div>
+                <input type="submit" value="Вернуться" />
+            </div>
+        }
+
+
+    </div>
+</body>
+</html>

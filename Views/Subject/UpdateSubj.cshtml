@@ -1,0 +1,39 @@
+﻿@model WebApplication6.Storage.Entity.Subject
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateSubject</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Update", "Subject", FormMethod.Post)) // все элементы будт переданы скрытым образом в результирующий набор нашей формы
+        {
+            <input id="id" name="id" type="hidden" value="@Model.id" />
+
+            <label>Название предмета: </label>
+            <input id="Name_of_Sub" type="text" name="Name_of_Sub" value="@Model.Name_of_Sub" /><br /><br />
+            <input type="submit" value="Редактировать предмет" />
+
+
+        }
+
+        @using (Html.BeginForm("DeleteSubj", "Subject", FormMethod.Get))
+        {
+            <input id="id" name="id" type="hidden" value="@Model.id" />
+            <input type="submit" value="удалить предмет" />
+        }
+
+
+        <div>
+            @Html.ActionLink("Вернуться на страницу вывода предметов", "ShowSubj", "Subject")
+        </div>
+
+    </div>
+</body>
+</html>

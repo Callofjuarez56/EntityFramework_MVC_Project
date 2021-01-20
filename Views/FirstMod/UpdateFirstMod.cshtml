@@ -1,0 +1,39 @@
+﻿@model WebApplication6.Storage.Entity.FirstM
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateFirstMod</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Update", "FirstMod", FormMethod.Post)) // все элементы будт переданы скрытым образом в результирующий набор нашей формы
+        {
+            <input id="id" name="id" type="hidden" value="@Model.id" />
+
+            <label>Оценка: </label>
+            <input id="FirstMd" type="text" name="FirstMd" value="@Model.FirstMd" /><br /><br />
+            <input type="submit" value="Редактировать модуль" />
+
+
+        }
+
+        @using (Html.BeginForm("DeleteFirstMod", "FirstMod", FormMethod.Get))
+        {
+            <input id="id" name="id" type="hidden" value="@Model.id" />
+            <input type="submit" value="удалить модуль" />
+        }
+
+
+        <div>
+            @Html.ActionLink("Вернуться на страницу ввода модулей", "ShowFirstMod", "FirstMod")
+        </div>
+
+    </div>
+</body>
+</html>

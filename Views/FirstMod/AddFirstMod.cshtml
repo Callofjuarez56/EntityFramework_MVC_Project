@@ -1,0 +1,26 @@
+﻿@model WebApplication6.Managers.FirstMod.CreateOrUpdateFirstMod
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddFirstMod</title>
+</head>
+<body>
+    @using (Html.BeginForm("Add", "FirstMod", FormMethod.Post))
+    {
+        <label>Оценка: </label>
+        <input id="FirstMd" type="text" name="FirstMd" /><br /><br />
+
+        <input type="submit" value="Добавить новую оценку" />
+    }
+
+    <div>
+        @Html.ActionLink("Вернуться на страницу вывода модулей", "ShowFirstMod", "FirstMod")
+    </div>
+</body>
+</html>

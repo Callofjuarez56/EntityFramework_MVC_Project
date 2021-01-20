@@ -1,0 +1,61 @@
+﻿@model WebApplication6.Storage.Entity.cal_c
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateStudent</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Update", "Student", FormMethod.Post)) // все элементы будт переданы скрытым образом в результирующий набор нашей формы
+        {
+            <input id="id" name="id" type="hidden" value="@Model.id" />
+
+            <label>Имя: </label>
+            <input id="FirstNumber" type="text" name="FirstNumber" value="@Model.FirstNumber" /><br /><br />
+
+            <label>Фамилия: </label>
+            <input id="SecondNumber" type="text" name="SecondNumber" value="@Model.SecondNumber" /><br /><br />
+
+            <label>Староста: </label>
+            <input id="GroupLeader" type="text" name="GroupLeader" value="@Model.GroupLeader" /><br /><br />
+
+            <label>ID Группы: </label>
+            <input id="GroupID" type="text" name="GroupID" value="@Model.GroupID" /><br /><br />
+
+            <label>ID Первого модуля: </label>
+            <input id="FirstModID" type="text" name="FirstModID" value="@Model.FirstModID" /><br /><br />
+
+            <label>ID Второго модуля: </label>
+            <input id="SecondModID" type="text" name="SecondModID" value="@Model.SecondModID" /><br /><br />
+
+
+            <label>ID Предмета: </label>
+            <input id="SubjID" type="text" name="SubjID" value="@Model.SubjID" /><br /><br />
+
+            <input type="submit" value="Редактировать студента" />
+
+
+        }
+
+
+        @using (Html.BeginForm("DeleteStudent", "Student", FormMethod.Get))
+        {
+            <input id="id" name="id" type="hidden" value="@Model.id" />
+            <input type="submit" value="удалить студента" />
+        }
+
+
+
+        <div>
+            @Html.ActionLink("Вернуться на страницу вывода студентов", "ShowStudent", "Student")
+        </div>
+
+    </div>
+</body>
+</html>

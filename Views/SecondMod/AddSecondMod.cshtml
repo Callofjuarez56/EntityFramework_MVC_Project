@@ -1,0 +1,25 @@
+﻿@model WebApplication6.Managers.SecondMod.CreateOrUpdateSecondMod
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddSecondMod</title>
+</head>
+<body>
+    @using (Html.BeginForm("Add", "SecondMod", FormMethod.Post))
+    {
+        <label>Оценка: </label>
+        <input id="SecondMd" type="text" name="SecondMd" /><br /><br />
+        <input type="submit" value="Добавить новую оценку" />
+    }
+
+    <div>
+        @Html.ActionLink("Вернуться на страницу вывода модулей", "ShowSecondMod", "SecondMod")
+    </div>
+</body>
+</html>
