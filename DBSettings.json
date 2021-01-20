@@ -1,0 +1,5 @@
+{//Подключение к БД
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost\\MSSQLSERVER01;Database=master;Trusted_Connection=True;"
+  }
+}
